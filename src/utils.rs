@@ -10,13 +10,23 @@ fn read_file(path: String) -> String {
     return content;
 }
 
-#[allow(dead_code)]
 pub fn read_file_as_strs(path: String) -> Vec<String> {
     let mut lines = Vec::new();
     let content = read_file(path);
     for line in content.split("\n") {
         if line.len() != 0 {
             lines.push(line.to_string())
+        }
+    }
+    return lines;
+}
+
+pub fn read_file_as_chars(path: String) -> Vec<Vec<char>> {
+    let mut lines = Vec::new();
+    let content = read_file(path);
+    for line in content.split("\n") {
+        if line.len() != 0 {
+            lines.push(line.chars().collect())
         }
     }
     return lines;
@@ -43,4 +53,8 @@ pub fn example_path(day_no: &str) -> String {
 
 pub fn input_path(day_no: &str) -> String {
     return base_path(day_no) + "/input";
+}
+
+pub fn str_to_i32(s: String, radix: u32) -> i32 {
+    return i32::from_str_radix(s.as_str(), radix).unwrap();
 }
