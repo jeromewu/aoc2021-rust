@@ -6,4 +6,4 @@ My Advent of Code 2021 solution in rust.
 
 ## Usage
 
-Simply run `cargo test` to run solution for every day.
+Uncomment specific days in `src/lib.rs` and simply run `cargo test` to see the result.
