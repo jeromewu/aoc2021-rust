@@ -3,7 +3,7 @@ use std::io::Read;
 
 pub const ROOT_PATH: &str = "./data";
 
-fn read_file(path: String) -> String {
+pub fn read_file(path: String) -> String {
     let mut file = File::open(path).unwrap();
     let mut content = String::new();
     file.read_to_string(&mut content).unwrap();
